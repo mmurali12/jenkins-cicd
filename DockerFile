@@ -1,0 +1,10 @@
+FROM centos:latest
+RUN yum install httpd\
+zip\
+unzip
+ADD https://github.com/mmurali12/jenkins-cicd /var/www/html
+WORKDIR /var/www/html
+CMD [ "/usr/sbin/httpd","-D","FOREGROUND" ]
+EXPOSE 80
+
+
